@@ -8,7 +8,6 @@ combined_data <- bind_cols(agugu_shapefile, agugu_morphology)
 
 
 
-
 # 1. Convert agugu_tpr to sf
 agugu_sf <- st_as_sf(
   agugu_tpr,
@@ -40,16 +39,35 @@ combined_with_tpr <- combined_sf_m %>%
     n_tested   = agugu_sf_m$n_tested[nearest_idx],
     n_positive = agugu_sf_m$n_positive[nearest_idx],
     positivity = agugu_sf_m$positivity[nearest_idx]
+  ) %>% 
+  rowwise() %>%
+  mutate(
+    dummy_tpr = case_when(
+      classification == 8 ~ sample(seq(0.5, 1.0, length.out = 100), 1),
+      classification == 7 ~ sample(seq(0.1, 0.5, length.out = 100), 1),
+      classification == 6 ~ sample(seq(0.0, 0.1, length.out = 100), 1),
+      classification == 5 ~ sample(seq(0.1, 0.5, length.out = 100), 1),
+      classification == 4 ~ sample(seq(0.5, 0.6, length.out = 100), 1),
+      classification == 3 ~ sample(seq(0.4, 0.8, length.out = 100), 1),
+      classification == 2 ~ sample(seq(0.5, 0.6, length.out = 100), 1),
+      classification == 1 ~ sample(seq(0.1, 0.5, length.out = 100), 1),
+      classification == 0 ~ sample(seq(0.1, 0.5, length.out = 100), 1),
+      TRUE ~ NA_real_
+    )
+  ) %>%
+  ungroup()
+
+
+
+
+
+ggplot(combined_with_tpr, aes(x = as.factor(classification), y = positivity)) +
+  geom_boxplot() +
+  labs(
+    x = "Settlement Type",
+    y = "Malaria Test Positivity",
+    title = "Malaria Positivity by Settlement Type"
   )
-
-
-
-
-
-
-
-
-write.csv(combined_data, "data/combined_data.csv", )
 
 
 

@@ -54,9 +54,3 @@ shapefile <- file.path("data", "Agugu", "agugu_footprints.shp")
 building_morphology <- file.path("data/Agugu_clustered_building_metrics.csv")
 tpr_data <- file.path("data/ibhh_tprdf_a.csv")
 
-agugu_shapefile <- st_read(shapefile)
-agugu_morphology <- read.csv(building_morphology)
-
-
-
-
