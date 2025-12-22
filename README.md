@@ -2,7 +2,7 @@
 
 This repository supports an undergraduate project that combines:
 1) a **literature review** on settlement types and disease risk in LMIC urban settings, and  
-2) a **hands-on analysis** using building morphology + environmental covariates to explore how **settlement types (clusters)** relate to **malaria test positivity (TPR)** in **Zango Ward, Kano (Nigeria)**.
+2) a **hands-on analysis** using building morphology + environmental covariates to explore how **settlement types (clusters)** relate to **malaria test positivity (TPR)** in **Agugu Ward, Ibadan (Nigeria)**.
 
 Students will:
 - review literature on **formal/informal/transition** settlement types and disease spread,
