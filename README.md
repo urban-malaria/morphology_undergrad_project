@@ -1,4 +1,4 @@
-# Settlement Types & Malaria Risk (Agugu Ward, Ibadan) — Undergraduate Project Repo
+# Settlement Types and Malaria Risk (Agugu Ward, Ibadan) — Undergraduate Project Repo
 
 This repository supports an undergraduate project that combines:
 1) a **literature review** on settlement types and disease risk in LMIC urban settings, and  
