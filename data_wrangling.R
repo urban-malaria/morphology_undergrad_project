@@ -191,5 +191,12 @@ ggplot(combined_with_tpr, aes(x = as.factor(classification), y = dummy_tpr)) +
 
 
 
-write.csv(simulated_data, "data/analysis_data.csv")
+# # Save spatial object with geometry (GeoPackage preserves geometry)
+# st_write(simulated_data, "data/analysis_data.gpkg", delete_dsn = TRUE)
+# 
+# # Save tabular version without geometry for CSV-based workflows
+# tryCatch(
+#   write.csv(st_drop_geometry(simulated_data), "data/analysis_data.csv", row.names = FALSE),
+#   error = function(e) warning("Could not write CSV (file may be open): ", e$message)
+# )
 
