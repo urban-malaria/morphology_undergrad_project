@@ -5,11 +5,7 @@ This repository supports an undergraduate project that combines:
 2) a **hands-on analysis** using building morphology + environmental covariates to explore how **settlement types (clusters)** relate to **malaria test positivity (TPR)** in **Agugu Ward, Ibadan (Nigeria)**.
 
 Students will:
-- review literature on **formal/informal/transition** settlement types and disease spread,
-- run a simple clustering workflow (or use pre-generated clusters),
-- perform exploratory analysis linking settlement types to TPR,
-- run a **Kruskal–Wallis test** to support the visual evidence, and
-- identify potential **hotspots**.
+1.) explore the data using statistical analysis taught in class
 
 ---
 
